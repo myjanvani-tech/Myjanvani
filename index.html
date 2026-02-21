@@ -1,211 +1,157 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MyJanvani Home Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#11d493",
-                        "background-light": "#ffffff",
-                        "background-dark": "#10221c",
-                        "text-main": "#111827",
-                        "text-secondary": "#6b7280",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<style type="text/tailwindcss">
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #e5e7eb;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d1d5db;
-        }
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Janvani</title>
+
+<style>
+
+/* BODY */
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+/* HEADER CENTER */
+header {
+  padding: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header-center {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* ARTICLE ITEM */
+.article-item {
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* AUTHOR */
+.author {
+  font-size: 14px;
+  color: gray;
+}
+
+/* TITLE */
+.article-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.article-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.article-title a:hover {
+  color: #0077cc;
+}
+
+/* DATE */
+.date {
+  font-size: 13px;
+  color: gray;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+  font-size: 14px;
+}
+
+</style>
+
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased">
-<nav class="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm dark:bg-[#10221c]/95 dark:border-gray-800">
-<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-<div class="flex items-center">
-<a class="flex items-center gap-2 shrink-0" href="#">
-<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
-<span class="material-symbols-outlined text-[20px]">edit_note</span>
-</div>
-<span class="text-xl font-bold tracking-tight text-text-main dark:text-white">MyJanvani</span>
-</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 text-text-secondary hover:text-text-main dark:hover:text-white transition-colors">
-<span class="material-symbols-outlined text-[24px]">bookmark</span>
-</button>
-</div>
-</div>
-</nav>
-<main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-<div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
-<div class="lg:col-span-8 flex flex-col gap-10">
-<div class="flex gap-6 border-b border-gray-100 pb-4 dark:border-gray-800 overflow-x-auto no-scrollbar">
+<body>
+
+<header>
+  <div class="header-center">
+    My Janvani
+  </div>
+</header>
+
+<div class="container">
+
+  <div id="articles-list"></div>
 
 </div>
-<article class="group flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between cursor-pointer">
-<div class="flex flex-1 flex-col justify-between gap-2 pr-4">
-<div class="flex items-center gap-2 mb-1">
-<img alt="Author Priyanka Chopra" class="h-6 w-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAKYw34RKLg0D-vNJ2zZgVl7nf1AdjSxhijWmfkTUJjmhZCWjEmcr9BI5Uf5sodalvIRTzvNFzazmOTgrWWYDhnD8B2HWmwCDYRFiuLbd_OGkMrhETZG3Q9VIHdJJe78l_5xJ9Vlx38m-IQBLU0e1mFYQEtASKFHwV-Wk64aJNhtjmmgJkaWcXksH4Vt72IcKsG0tuJf7LrdYJ5b036Jztw4iyDYWSEuR-uAc_T3-UhYkKqWVhwdTxdRMGEmlWcxcNtBnlwGX5_O4"/>
-<p class="text-sm font-medium text-text-main dark:text-white">Dinesh Tiwari <span class="text-text-secondary font-normal mx-1 dark:text-gray-500"></span> <span class="font-medium"></span></p>
-</div>
-<h2 class="text-xl font-bold leading-tight text-text-main group-hover:text-gray-700 dark:text-white dark:group-hover:text-gray-300">क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..</h2>
-<p class="line-clamp-2 text-base text-text-secondary dark:text-gray-400 font-serif">भारत की सबसे बड़ी चुनौती व नैतिकता आईएएस है..</p>
-<div class="mt-3 flex items-center justify-between">
-<div class="flex items-center gap-3 text-sm text-text-secondary dark:text-gray-500">
-<span>Dec 13</span>
-<span>·</span>
-<span>8 min read</span>
-<span class="hidden rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:inline-block">Startups</span>
-</div>
-<div class="flex gap-3">
-<button class="text-text-secondary hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[22px]">bookmark_add</span>
-</button>
-</div>
-</div>
-</div>
-<div class="h-32 w-full shrink-0 sm:h-32 sm:w-48 overflow-hidden rounded-lg bg-gray-50">
-<img alt="Man working on laptop in a cafe" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCic9R_kko4d9lqVyQI1T8IAT831fwHwu5ql7R3orb2VBWP5o6oBrCQHqznXA7u7a_v0xtnM0Kv8m_K8Bp-gI-Zrsm0TUyNGzNR2B0dQc-_cOCHTSRyq33PsaBgwj5_zIdU4PEvIiH2Rd1RuEz4J2QO5qLWt8gykxeCXT9MAv3S2JI7Kc45_XSGKHpnYwVWwoKWOC3_BvmU7yDK-izfnEba9NaAJKMXNLaEAfQIHUGPWuMaxCCUsQkfgBdCU7yUxCHDSzu18LP5ZuQ"/>
-</div>
-</article>
-<hr class="border-gray-100 dark:border-gray-800"/>
-<article class="group flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between cursor-pointer">
-<div class="flex flex-1 flex-col justify-between gap-2 pr-4">
-<div class="flex items-center gap-2 mb-1">
-<img alt="Author Rahul Verma" class="h-6 w-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDscTmej8KVz36at7YLAMeCkA_Yse6mJI5SSgs6emyEoBI33ccKZrS4JU2JZk7ilW5da7TijdF2IowUFM9i9bzBcmMG6NDXaaYU_hlFKD7bWx-W2mF60jSW7gcY--gaYoFDTsyXlsp_bhabiZxJRc6Za6iwma6mNSnaeXwgq63ORiZFv_fPrOszEKe-pg2jL5FqIMQnAP5jERqh8X5hXMPYjxf6tSkjcEZ7uSgdTYcs3T86V0HJru917eqtaSk-UI0EcsYsmXcVG9o"/>
-<p class="text-sm font-medium text-text-main dark:text-white">Rahul Verma</p>
-</div>
-<h2 class="text-xl font-bold leading-tight text-text-main group-hover:text-gray-700 dark:text-white dark:group-hover:text-gray-300">Understanding the New Tax Regime for Freelancers</h2>
-<p class="line-clamp-2 text-base text-text-secondary dark:text-gray-400 font-serif">Navigating the complexities of Section 44ADA and what it means for your pocket this financial year.</p>
-<div class="mt-3 flex items-center justify-between">
-<div class="flex items-center gap-3 text-sm text-text-secondary dark:text-gray-500">
-<span>Dec 12</span>
-<span>·</span>
-<span>6 min read</span>
-<span class="hidden rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:inline-block">Finance</span>
-</div>
-<div class="flex gap-3">
-<button class="text-text-secondary hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[22px]">bookmark_add</span>
-</button>
-</div>
-</div>
-</div>
-<div class="h-32 w-full shrink-0 sm:h-32 sm:w-48 overflow-hidden rounded-lg bg-gray-50">
-<img alt="Calculator and tax forms" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtL7DxnFTcrI15N5NG_Jf2uRaMAUZX5C-5E2hJJFJzxGwsqzPINCnb2Sczb8WDFs6J5eeeWhgeT4jaeUHtRBgs8C0GTpvSKwncCAXktBH2TlzYBHY_GEPJSOc84famPNBvZxb6zaUIffb2J0D7EYdpEcmpG8Js03KiodxOSDuqXZqvfsQ6tv1V3cNNFAGbNCklCpZyk55L2KSqz1SPT3UpZKkIm-Er4Ub_gmJwM6zfKUT81jOhbSjJisJG9hRhQWRwVleSZ5fP54Y"/>
-</div>
-</article>
-<hr class="border-gray-100 dark:border-gray-800"/>
-<article class="group flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between cursor-pointer">
-<div class="flex flex-1 flex-col justify-between gap-2 pr-4">
-<div class="flex items-center gap-2 mb-1">
-<img alt="Author Meera Syal" class="h-6 w-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK9hDdWQkGUKB-_GScVV3BJIyOjha7Ud44wFdXrRnCEKfHtIrxb2ArxzYM0xBrV2Tzh2otXdlZ8mfMnSZKMFPraDogqS0ZaIAmBJ9SL5P1qdOPkUBWVOzxyNlYpLvxczcNGAYPKLKRVnJAcp1Oh2DV_G5JdGRwKxeTpPtSV0xpGhLq0zeZb_MMmIGZ070QbjvHbjBIeyRb9myzJKoS8eitOl39WQ8pGTI03YRVUPrYqOhNpyUMSBl8j4jeWdvKNH2zXswFsRECNMA"/>
-<p class="text-sm font-medium text-text-main dark:text-white">Meera Syal <span class="text-text-secondary font-normal mx-1 dark:text-gray-500">in</span> <span class="font-medium">Indian Culture</span></p>
-</div>
-<h2 class="text-xl font-bold leading-tight text-text-main group-hover:text-gray-700 dark:text-white dark:group-hover:text-gray-300">The Unsung Poets of Old Delhi</h2>
-<p class="line-clamp-2 text-base text-text-secondary dark:text-gray-400 font-serif">Walking through the lanes of Chandni Chowk, I discovered a community keeping the tradition of Urdu shayari alive.</p>
-<div class="mt-3 flex items-center justify-between">
-<div class="flex items-center gap-3 text-sm text-text-secondary dark:text-gray-500">
-<span>Dec 11</span>
-<span>·</span>
-<span>12 min read</span>
-<span class="hidden rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:inline-block">Culture</span>
-</div>
-<div class="flex gap-3">
-<button class="text-text-secondary hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[22px]">bookmark_add</span>
-</button>
-</div>
-</div>
-</div>
-<div class="h-32 w-full shrink-0 sm:h-32 sm:w-48 overflow-hidden rounded-lg bg-gray-50">
-<img alt="Old Delhi street view" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXzaBLruOkeITR5C0wQIM9jH5qHXpBLY1-4tBEtplKJAYAvmW-HXAGbkt2WKP71GhIBjWn52uNkCFiCfj8TsXXhzrk6cEuSsZokGTIXMcPw_nReKOL8uhrAUpKfAx1nGndOAoqflZKtUBIbu-U4ov5f4HrvtqIAx3AriaKoh54WqOlvoo14KacWLqV2pt3IEJgDXUyIesk8-YqEL6wfDTD-bks1O4io9pYhF80B8dyllxRbHqbgZGFro7xbkmnpJo7Wa7zW4JFEL0"/>
-</div>
-</article>
-</div>
-<aside class="hidden lg:block lg:col-span-4 pl-10 border-l border-gray-100 dark:border-gray-800">
 
-<h3 class="mb-6 text-sm font-bold uppercase tracking-wide text-text-main dark:text-white">Recently Viewed</h3>
-<div class="flex flex-col gap-5">
-<a class="group" href="#">
-<div class="flex items-start gap-3">
-<div class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-primary dark:bg-gray-600 transition-colors"></div>
-<span class="text-sm leading-snug text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white transition-colors">Is Bangalore really running out of water? Impact on real estate.</span>
-</div>
-</a>
-<a class="group" href="#">
-<div class="flex items-start gap-3">
-<div class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-primary dark:bg-gray-600 transition-colors"></div>
-<span class="text-sm leading-snug text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white transition-colors">Top 5 hidden cafes in Bandra West for digital nomads</span>
-</div>
-</a>
-<a class="group" href="#">
-<div class="flex items-start gap-3">
-<div class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-primary dark:bg-gray-600 transition-colors"></div>
-<span class="text-sm leading-snug text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white transition-colors">Review: The new electric scooters in the Indian market (2024)</span>
-</div>
-</a>
-<a class="group" href="#">
-<div class="flex items-start gap-3">
-<div class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-primary dark:bg-gray-600 transition-colors"></div>
-<span class="text-sm leading-snug text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white transition-colors">Understanding the rise of D2C brands in India</span>
-</div>
-</a>
-</div>
-</div>
-<div class="pt-8 border-t border-gray-100 dark:border-gray-800">
-<footer class="flex flex-wrap gap-x-4 gap-y-2 text-xs text-text-secondary dark:text-gray-500">
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Help</a>
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Status</a>
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">About</a>
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Careers</a>
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Privacy</a>
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Terms</a>
-<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Text to speech</a>
+<footer>
+  © 2026 My Janvani
 </footer>
-<p class="mt-6 text-[10px] text-gray-400 dark:text-gray-600">© 2024 MyJanvani. Platform for reading and discovery.</p>
-</div>
-</div>
-</aside>
-</div>
-</main>
 
-</body></html>
+<script>
+
+/* ARTICLES DATA */
+const articles = [
+
+{
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "articles/article1.html"
+},
+
+{
+  title: "My Janvani Platform Launch",
+  author: "Suraj Tiwari",
+  date: "20 February 2026",
+  link: "articles/article2.html"
+}
+
+];
+
+
+/* LOAD ARTICLES */
+
+let output = "";
+
+articles.forEach(article => {
+
+output += `
+
+<div class="article-item">
+
+<div class="author">
+${article.author}
+</div>
+
+<div class="article-title">
+<a href="${article.link}">
+${article.title}
+</a>
+</div>
+
+<div class="date">
+${article.date}
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("articles-list").innerHTML = output;
+
+</script>
+
+</body>
+</html>
