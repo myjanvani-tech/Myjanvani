@@ -26,7 +26,7 @@
             },
         }
     </script>
-<style>
+<style type="text/tailwindcss">
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -47,76 +47,34 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased">
 <nav class="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm dark:bg-[#10221c]/95 dark:border-gray-800">
 <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-<div class="flex items-center gap-8 w-full">
+<div class="flex items-center">
 <a class="flex items-center gap-2 shrink-0" href="#">
 <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
 <span class="material-symbols-outlined text-[20px]">edit_note</span>
 </div>
 <span class="text-xl font-bold tracking-tight text-text-main dark:text-white">MyJanvani</span>
 </a>
-<div class="flex-1 max-w-2xl">
-<div class="relative flex items-center">
-<span class="material-symbols-outlined absolute left-3 text-gray-400 text-[20px]">search</span>
-<input class="h-10 w-full rounded-full border-none bg-gray-100/50 py-2 pl-10 pr-4 text-sm text-text-main placeholder-gray-500 focus:ring-1 focus:ring-primary/30 dark:bg-gray-800/50 dark:text-white dark:placeholder-gray-500 transition-all focus:bg-gray-100 dark:focus:bg-gray-800" placeholder="Search for stories, topics, and authors..." type="text"/>
-</div>
-</div>
 </div>
 <div class="flex items-center gap-4">
-<button class="p-2 text-text-secondary hover:text-text-main dark:hover:text-white">
+<button class="p-2 text-text-secondary hover:text-text-main dark:hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[24px]">bookmark</span>
 </button>
 </div>
 </div>
 </nav>
 <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-<section class="mb-12 border-b border-gray-100 pb-10 dark:border-gray-800">
-<div class="flex items-center gap-2 mb-8">
-<div class="flex h-6 w-6 items-center justify-center rounded-full border border-gray-200 dark:border-gray-700">
-<span class="material-symbols-outlined text-[14px] text-text-main dark:text-white">trending_up</span>
-</div>
-<h2 class="text-xs font-bold uppercase tracking-wider text-text-main dark:text-white">Trending in India</h2>
-</div>
-<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-<div class="flex gap-4 items-start group cursor-pointer">
-<span class="text-3xl font-black text-gray-200 dark:text-gray-700">01</span>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2">
-<img alt="Portrait of Rajesh Kumar" class="h-5 w-5 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfP3oGwtR9DGVfVbThyhX0BH6So9QnEx0YVKbugaAReRogjM7OFBDty3zFLIReYNdmcXdgOo4-HyRwg1BCpdJkPD5VSNgkD8T_zVxPpnyeh8DuDk8jxj5D7To4TDihtx0dzCFUc6AmJ52-fG-SaB1SG19fkhsqaaExM_vHKLSnp5ZOAq8GRtYSrHmyf_kjP9HW3kVllswNsYrsW3UKK8tqTSqfrtfzm2aNmxTJYPoJBKFx5vbodXCROVaCQPX0E04PoR_MtlmrJO8"/>
-<span class="text-xs font-medium text-text-main dark:text-white">Rajesh Kumar</span>
-</div>
-<h3 class="font-bold text-lg leading-tight text-text-main group-hover:text-primary transition-colors dark:text-white">The Future of UPI in Rural India: Beyond Payments</h3>
-<span class="text-xs text-text-secondary dark:text-gray-400">Dec 12 · 5 min read</span>
-</div>
-</div>
-<div class="flex gap-4 items-start group cursor-pointer">
-<span class="text-3xl font-black text-gray-200 dark:text-gray-700">02</span>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2">
-<img alt="Portrait of Anita Desai" class="h-5 w-5 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXQUu1PyHEvxwW7jl-KeIExe84m3rWS9QFjjgrdu4XcS37qnfeSOZHVQeEq5dM0iwCy4XpI4v5BPOKIpUmQySDxi_R6gY1pKs7bT1ghyyQIRYf91NuBC5zVVpCOFZLpSlEFbrl6tSA609D-q4JMM1wMnI0ZCGsmk7Q4dO-b0lIiuftgD3Ukkxszcj5daHaT6wQwopOO_yyKDSbyp6Sn2A_P1uSN5SyAQxtOI63zaVWuzVg3s4r0zQoE-_aWsjrVyRtq4FBJU0eHKw"/>
-<span class="text-xs font-medium text-text-main dark:text-white">Anita Desai</span>
-</div>
-<h3 class="font-bold text-lg leading-tight text-text-main group-hover:text-primary transition-colors dark:text-white">Top 10 Sustainable Fashion Brands emerging from Jaipur</h3>
-<span class="text-xs text-text-secondary dark:text-gray-400">Dec 11 · 4 min read</span>
-</div>
-</div>
-<div class="flex gap-4 items-start group cursor-pointer">
-<span class="text-3xl font-black text-gray-200 dark:text-gray-700">03</span>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2">
-<img alt="Portrait of Vikram Singh" class="h-5 w-5 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEbjXsWaadlQ385hb8gj-4qiG-a93lz0b5UR4HB_bJg1Ga7qFibzB-yUimX5WnjdASDbksVaKQ2JNXxstBzg0dJFEdB6Pul3oBcrGp5puWC_xQXo4tyejwxEpOkzfEBb__sx6CPXuSc7iv-81E3BnkaMqN_qhxByJzpV4KGm7UqGg7PK59yULyL42zPCa_o3-5XnjZ_fcFEXLaAwVNLMEuR7nsWXGOcpmuqJCN1cElI7LNgoSpzE6PsS9dLKfygmSIDSZv0pxjzhg"/>
-<span class="text-xs font-medium text-text-main dark:text-white">Vikram Singh</span>
-</div>
-<h3 class="font-bold text-lg leading-tight text-text-main group-hover:text-primary transition-colors dark:text-white">Bangalore Traffic: A Satirical Diary of a Techie</h3>
-<span class="text-xs text-text-secondary dark:text-gray-400">Dec 10 · 3 min read</span>
-</div>
-</div>
-</div>
-</section>
 <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
 <div class="lg:col-span-8 flex flex-col gap-10">
 <div class="flex gap-6 border-b border-gray-100 pb-4 dark:border-gray-800 overflow-x-auto no-scrollbar">
@@ -209,22 +167,7 @@
 </article>
 </div>
 <aside class="hidden lg:block lg:col-span-4 pl-10 border-l border-gray-100 dark:border-gray-800">
-<div class="sticky top-24 flex flex-col gap-14">
-<div>
-<h3 class="mb-6 text-sm font-bold uppercase tracking-wide text-text-main dark:text-white">Recommended Topics</h3>
-<div class="flex flex-wrap gap-2.5">
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Technology</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Politics</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Bollywood</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Startups</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Cricket</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Travel</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">Food</a>
-<a class="rounded-full bg-gray-100 px-4 py-2 text-sm text-text-main transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700" href="#">History</a>
-</div>
-<a class="mt-6 block text-sm font-medium text-primary hover:text-green-600 transition-colors" href="#">See all topics</a>
-</div>
-<div>
+
 <h3 class="mb-6 text-sm font-bold uppercase tracking-wide text-text-main dark:text-white">Recently Viewed</h3>
 <div class="flex flex-col gap-5">
 <a class="group" href="#">
