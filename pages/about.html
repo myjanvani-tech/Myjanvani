@@ -1,51 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Us - My Janvani</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Editor - My Janvani</title>
 
-  <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f8;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+.header{
+    background:white;
+    padding:15px;
+    text-align:center;
+    position:relative;
+    border-bottom:1px solid #ddd;
+}
+
+.header h1{
+    margin:0;
+    font-size:22px;
+}
+
+.back-btn{
+    position:absolute;
+    right:15px;
+    top:15px;
+    text-decoration:none;
+    border:1px solid black;
+    padding:5px 12px;
+    border-radius:5px;
+    color:black;
+    font-size:14px;
+}
+
+.container{
+    flex:1;
+    padding:20px;
+    text-align:center;
+}
+
+.profile-img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:3px solid #333;
+    object-fit:cover;
+}
+
+.name{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.designation{
+    color:gray;
+    margin-bottom:15px;
+}
+
+.details{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:left;
+    line-height:1.6;
+}
+
+.footer{
+    background:white;
+    padding:15px;
+    text-align:center;
+    border-top:1px solid #ddd;
+}
+
+.footer a{
+    text-decoration:none;
+    color:black;
+    margin:0 10px;
+}
+
+.copy{
+    margin-top:5px;
+    color:gray;
+}
+</style>
+
 </head>
 <body>
 
-<header>
-  <div class="header-container">
-    <div class="logo">My Janvani</div>
-  </div>
-</header>
+<div class="header">
+    <h1>My Janvani</h1>
+    <a href="index.html" class="back-btn">Back</a>
+</div>
 
 <div class="container">
 
-  <div class="article-content">
+<img src="dinesh.jpg" class="profile-img">
 
-    <h1>About Us</h1>
+<div class="name">Dinesh Tiwari</div>
+<div class="designation">Editor, My Janvani</div>
 
-    <p>
-      My Janvani एक स्वतंत्र डिजिटल प्लेटफॉर्म है जिसका उद्देश्य भारत के लोगों को अपनी आवाज व्यक्त करने का अवसर देना है।
-    </p>
+<div class="details">
 
-    <p>
-      यह प्लेटफॉर्म समाचार, विचार, सामाजिक मुद्दों और जनहित से जुड़े विषयों पर लेख प्रकाशित करता है।
-    </p>
+<p>
+Dinesh Tiwari is a senior media professional and development expert with over 21 years of experience in journalism, media management, livelihood development, CSR, and government coordination.
+</p>
 
-    <p>
-      हमारा लक्ष्य है एक पारदर्शी, निष्पक्ष और जन-केंद्रित सूचना मंच प्रदान करना।
-    </p>
+<p>
+He has worked with reputed organizations including Ministry of MSME (Govt. of Uttar Pradesh), Rashtriya Sahara, Allahabad Express, Tata AIG Life Insurance, and Indian Society of Agribusiness Professionals (ISAP).
+</p>
 
-    <p>
-      Founder: Suraj Tiwari  
-      <br>
-      Email: contact@myjanvani.com
-    </p>
+<p>
+He has strong expertise in media management, public affairs, stakeholder coordination, fundraising, skill development, and community empowerment. He has actively contributed to rural development, women empowerment, and financial inclusion programs across Uttar Pradesh.
+</p>
 
-  </div>
+<p>
+As Editor of My Janvani, his mission is to provide reliable news, highlight social issues, and give voice to the people while maintaining journalistic integrity and transparency.
+</p>
+
+<p>
+Location: Prayagraj, Uttar Pradesh<br>
+Languages: Hindi & English<br>
+Experience: 21+ Years
+</p>
 
 </div>
 
-<footer>
-  © 2026 My Janvani. All rights reserved.
-</footer>
+</div>
+
+<div class="footer">
+
+<a href="#">Terms & Conditions</a> |
+<a href="#">Privacy Policy</a>
+
+<div class="copy">
+© 2026 My Janvani. All Rights Reserved.
+</div>
+
+</div>
 
 </body>
 </html>
