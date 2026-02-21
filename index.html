@@ -1,112 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MyJanvani Home Page</title>
+  <meta charset="UTF-8">
+  <title>My Janvani</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-<script>
-tailwind.config = {
-    darkMode: "class",
-    theme: {
-        extend: {
-            colors: {
-                primary: "#11d493",
-                "background-light": "#ffffff",
-                "background-dark": "#10221c",
-                "text-main": "#111827",
-                "text-secondary": "#6b7280",
-            },
-            fontFamily: {
-                display: ["Inter", "sans-serif"]
-            }
-        }
-    }
-}
-</script>
-
-<style>
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-thumb {
-    background: #e5e7eb;
-    border-radius: 4px;
-}
-.line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-</style>
-
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
 
-<body class="bg-background-light dark:bg-background-dark text-text-main font-display">
-
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 border-b border-gray-100 bg-white dark:bg-[#10221c]">
-
-<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-
-    <!-- Logo -->
-    <div class="flex items-center gap-8">
-
-        <a class="flex items-center gap-2" href="#">
-            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <span class="material-symbols-outlined">edit_note</span>
-            </div>
-
-            <span class="text-xl font-bold dark:text-white">
-                MyJanvani
-            </span>
-        </a>
-
-        <!-- Search -->
-        <div class="hidden md:block">
-
-            <div class="relative">
-
-                <span class="material-symbols-outlined absolute left-3 top-2 text-gray-400">
-                    search
-                </span>
-
-                <input
-                    class="h-10 w-64 rounded-full bg-gray-100 pl-10 pr-4 text-sm dark:bg-gray-800 dark:text-white"
-                    placeholder="Search Janvani..."
-                    type="text"
-                />
-
-            </div>
-
-        </div>
-
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">My Janvani</div>
     </div>
+  </header>
 
-</div>
+  <!-- Main Content -->
+  <div class="container">
 
-</nav>
+    <h1>Latest Articles</h1>
 
+    <!-- Articles list yahan load hogi -->
+    <div id="articles-list"></div>
 
-<!-- MAIN CONTENT -->
-<main class="mx-auto max-w-7xl px-4 py-8">
+  </div>
 
-<h1 class="text-3xl font-bold mb-6 dark:text-white">
-Welcome to MyJanvani
-</h1>
+  <!-- Footer -->
+  <footer>
+    © 2026 My Janvani. All rights reserved.
+  </footer>
 
-<p class="text-text-secondary dark:text-gray-400">
-India's open platform to share your voice.
-</p>
+  <!-- Script -->
+  <script>
+    fetch('articles.json')
+      .then(response => response.json())
+      .then(data => {
 
-</main>
+        let output = "";
 
+        data.reverse().forEach(article => {
+
+          output += `
+            <div class="article-card">
+
+              <h2>
+                <a href="${article.file}">
+                  ${article.title}
+                </a>
+              </h2>
+
+              <div class="article-date">
+                ${article.date} | ${article.author}
+              </div>
+
+            </div>
+          `;
+
+        });
+
+        document.getElementById("articles-list").innerHTML = output;
+
+      })
+      .catch(error => {
+        console.error("Error loading articles:", error);
+      });
+  </script>
 
 </body>
 </html>
