@@ -5,57 +5,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Editor - My Janvani</title>
 
+<!-- Font Awesome for Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
+
+/* BODY SAME AS INDEX */
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f6f8;
+    font-family:system-ui, Arial, sans-serif;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
+
+    background:
+    repeating-radial-gradient(circle at 0 0,
+    #f3f3f3,
+    #f3f3f3 12px,
+    #ededed 12px,
+    #ededed 24px);
 }
 
-.header{
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
     background:white;
-    padding:15px;
-    text-align:center;
-    position:relative;
-    border-bottom:1px solid #ddd;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-.header h1{
-    margin:0;
+.header-title{
     font-size:22px;
+    font-weight:bold;
 }
 
-.back-btn{
-    position:absolute;
-    right:15px;
-    top:15px;
+.header-right a{
     text-decoration:none;
-    border:1px solid black;
-    padding:5px 12px;
-    border-radius:5px;
-    color:black;
+    margin-left:12px;
+    padding:6px 14px;
+    border-radius:20px;
     font-size:14px;
+    border:1px solid #0077cc;
+    color:#0077cc;
+    transition:0.3s;
 }
 
+.header-right a:hover{
+    background:#0077cc;
+    color:white;
+}
+
+/* CONTAINER */
 .container{
     flex:1;
-    padding:20px;
+    padding:30px 15px 120px 15px;
     text-align:center;
 }
 
+/* PROFILE */
 .profile-img{
-    width:140px;
-    height:140px;
+    width:150px;
+    height:150px;
     border-radius:50%;
-    border:3px solid #333;
+    border:4px solid #0077cc;
     object-fit:cover;
 }
 
 .name{
-    font-size:22px;
+    font-size:24px;
     font-weight:bold;
     margin-top:10px;
 }
@@ -65,52 +87,97 @@ body{
     margin-bottom:15px;
 }
 
+/* SOCIAL ICONS */
+.social-icons{
+    margin:15px 0 25px 0;
+}
+
+.social-icons a{
+    margin:0 10px;
+    font-size:22px;
+    color:#333;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#0077cc;
+}
+
+/* DETAILS */
 .details{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
     background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
     text-align:left;
-    line-height:1.6;
+    line-height:1.7;
 }
 
-.footer{
-    background:white;
-    padding:15px;
+/* FOOTER FIXED */
+footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    color:#ccc;
     text-align:center;
-    border-top:1px solid #ddd;
+    padding:14px;
+    font-size:14px;
 }
 
-.footer a{
+footer a{
+    color:#ccc;
     text-decoration:none;
-    color:black;
-    margin:0 10px;
+    margin:0 8px;
 }
 
-.copy{
-    margin-top:5px;
-    color:gray;
+footer a:hover{
+    color:white;
 }
+
 </style>
-
 </head>
+
 <body>
 
-<div class="header">
-    <h1>My Janvani</h1>
-    <a href="/index.html" class="back-btn">Back</a>
-</div>
+<header>
+    <div class="header-title">My Janvani</div>
+
+    <div class="header-right">
+        <a href="/index.html">Home</a>
+        <a href="/index.html">All Articles</a>
+    </div>
+</header>
 
 <div class="container">
 
-<img src="/image/dinesh.jpg" class="profile-img">
+    <img src="/image/dinesh.jpg" class="profile-img">
 
-<div class="name">Dinesh Tiwari</div>
-<div class="designation">Editor, My Janvani</div>
+    <div class="name">Dinesh Tiwari</div>
+    <div class="designation">Editor, My Janvani</div>
 
-<div class="details">
+    <!-- SOCIAL MEDIA -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1HeNSSj76t/" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/firstdaynewschannel?igsh=MW1tNzdudXUzeTZmYw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.instagram.com/dineshtiwari_prayagraj?igsh=OTl1eWpkaXh0a2I=" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://twitter.com" target="_blank">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </div>
+
+    <div class="details">
 
 <p>
 Dinesh Tiwari is a senior media professional and development expert with over 21 years of experience in journalism, media management, livelihood development, CSR, and government coordination.
@@ -134,20 +201,13 @@ Languages: Hindi & English<br>
 Experience: 21+ Years
 </p>
 
-</div>
+    </div>
 
 </div>
 
-<div class="footer">
-
-<a href="#">Terms & Conditions</a> |
-<a href="#">Privacy Policy</a>
-
-<div class="copy">
+<footer>
 © 2026 My Janvani. All Rights Reserved.
-</div>
-
-</div>
+</footer>
 
 </body>
 </html>
