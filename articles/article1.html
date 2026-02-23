@@ -7,93 +7,105 @@
 
 <style>
 
+/* BODY SAME BACKGROUND AS INDEX */
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#f0f2f5;
+    font-family:system-ui, Arial, sans-serif;
+    background:
+    repeating-radial-gradient(circle at 0 0,
+    #f3f3f3,
+    #f3f3f3 12px,
+    #ededed 12px,
+    #ededed 24px);
 }
 
-/* Header */
-.header{
-    background:white;
-    padding:15px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-    border-bottom:1px solid #ddd;
+/* HEADER NAVIGATION */
+header{
     position:sticky;
     top:0;
-}
-
-.back-btn{
-    position:absolute;
-    left:15px;
-    top:15px;
-    text-decoration:none;
-    border:1px solid black;
-    padding:5px 12px;
-    border-radius:5px;
-    color:black;
-}
-
-/* Container */
-.container{
-    max-width:800px;
-    margin:20px auto;
+    z-index:1000;
     background:white;
-    padding:20px;
-    border-radius:10px;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* Title */
+.header-title{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-links a{
+    text-decoration:none;
+    margin-left:12px;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+    border:1px solid #0077cc;
+    color:#0077cc;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    background:#0077cc;
+    color:white;
+}
+
+/* CONTAINER */
+.container{
+    max-width:850px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* TITLE */
 .title{
     font-size:28px;
     font-weight:bold;
     margin-bottom:10px;
 }
 
-/* Meta */
+/* META */
 .meta{
     color:gray;
     font-size:14px;
 }
 
-/* Views */
 .views{
     margin-top:5px;
     color:#555;
 }
 
-/* Image */
+/* IMAGE */
 .article-img{
     width:100%;
-    border-radius:10px;
-    margin-top:15px;
-}
-
-/* Content */
-.content{
-    margin-top:15px;
-    font-size:17px;
-    line-height:1.7;
-}
-
-/* Buttons */
-.actions{
+    border-radius:12px;
     margin-top:20px;
 }
 
-button{
-    padding:8px 15px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:15px;
+/* CONTENT */
+.content{
+    margin-top:20px;
+    font-size:17px;
+    line-height:1.8;
 }
 
-.like{
-    background:#1877f2;
-    color:white;
+/* SHARE BUTTON */
+.actions{
+    margin-top:25px;
+}
+
+button{
+    padding:10px 18px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
 }
 
 .share{
@@ -101,22 +113,39 @@ button{
     color:white;
 }
 
-.footer{
+/* FOOTER NORMAL (NOT FIXED) */
+footer{
     text-align:center;
-    padding:20px;
-    margin-top:30px;
-    background:white;
+    padding:25px;
+    margin-top:40px;
+    background:#111;
+    color:#ccc;
+    font-size:14px;
+}
+
+footer a{
+    color:#ccc;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+footer a:hover{
+    color:white;
 }
 
 </style>
-
 </head>
+
 <body>
 
-<div class="header">
-<a href="/index.html" class="back-btn">← Home</a>
-My Janvani
-</div>
+<header>
+    <div class="header-title">My Janvani</div>
+
+    <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/pages/about.html">About</a>
+    </div>
+</header>
 
 <div class="container">
 
@@ -132,7 +161,7 @@ By दिनेश तिवारी | 21 Feb 2026
 👁 Views: <span id="views">0</span>
 </div>
 
-<img src="/image/1.jpg" class="article-img">
+<img src="/Image/1.jpg" class="article-img">
 
 <div class="content">
 
@@ -160,67 +189,39 @@ By दिनेश तिवारी | 21 Feb 2026
 तीसरा – बिहार में आईएएस अधिकारी का चार्टर्ड प्लेन से सफर।
 इस पर राजनीतिक विवाद हुआ, लेकिन कोई स्पष्ट कार्यवाही नहीं हुई।
 </p>
-
+    
 <p>
 श्री पाठक कहते हैं कि यह घटनाएं छोटी दिखती हैं, लेकिन प्रतीक बड़ी है।
-</p>
-
-<p>
 क्या समय आ गया है कि इस इस्पात के ढांचा को फिर से जन-केंद्रित बनाया जाए?
-</p>
-
-<p>
 क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है?
-</p>
-
-<p>
 भारत की सबसे बड़ी चुनौती व नैतिकता आईएएस है।
-</p>
-
-<p>
 आपकी राय क्या है? कमेंट में जरूर बताएँ।
 </p>
 
 </div>
 
 <div class="actions">
-
-<button class="like" onclick="like()">
-👍 Like (<span id="likes">0</span>)
-</button>
-
-<button class="share" onclick="share()">
-📤 Share
-</button>
-
+<button class="share" onclick="share()">📤 Share</button>
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 My Janvani
-</div>
-
+<footer>
+© 2026 My Janvani |
+<a href="/pages/about.html">About</a> |
+<a href="/pages/privacy.html">Privacy Policy</a> |
+<a href="/pages/terms.html">Terms</a>
+</footer>
 
 <script>
 
 let id="article1";
 
-/* Views */
+/* Views Counter */
 let views=localStorage.getItem(id+"views")||0;
 views++;
 localStorage.setItem(id+"views",views);
 document.getElementById("views").innerText=views;
-
-/* Likes */
-let likes=localStorage.getItem(id+"likes")||0;
-document.getElementById("likes").innerText=likes;
-
-function like(){
-likes++;
-localStorage.setItem(id+"likes",likes);
-document.getElementById("likes").innerText=likes;
-}
 
 /* Share */
 function share(){
