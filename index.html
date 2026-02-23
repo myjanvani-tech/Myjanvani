@@ -18,16 +18,9 @@ body {
   background:
   repeating-radial-gradient(circle at 0 0,
   #f3f3f3,
-  #f3f3f3 10px,
-  #ededed 10px,
-  #ededed 20px);
-}
-
-  /* Soft pattern background */
-  background:
-  radial-gradient(circle at 10% 20%, rgba(0,0,0,0.03) 2px, transparent 3px),
-  linear-gradient(135deg,#f8f9fb,#eef2f7);
-  background-size:120px 120px,cover;
+  #f3f3f3 12px,
+  #ededed 12px,
+  #ededed 24px);
 }
 
 /* HEADER */
@@ -36,21 +29,20 @@ header {
   top: 0;
   z-index: 1000;
 
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(6px);
-
+  background: white;
   padding: 12px 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
 
 /* Left profile */
 .header-left img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -82,22 +74,22 @@ header {
 .container {
   flex: 1;
   max-width: 750px;
-  margin: 30px auto;
+  margin: 40px auto 120px auto; /* footer space */
   padding: 15px;
 }
 
 /* ARTICLE CARD */
 .article-item {
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   transition: 0.3s;
 }
 
 .article-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 /* AUTHOR */
@@ -110,7 +102,7 @@ header {
 .article-title {
   font-size: 20px;
   font-weight: bold;
-  margin: 5px 0;
+  margin: 6px 0;
 }
 
 .article-title a {
@@ -128,7 +120,7 @@ header {
   color: gray;
 }
 
-/* FIXED FOOTER */
+/* FOOTER */
 footer {
   position: fixed;
   bottom: 0;
@@ -136,7 +128,7 @@ footer {
   background: #111;
   color: #ccc;
   text-align: center;
-  padding: 12px;
+  padding: 14px;
   font-size: 14px;
 }
 
@@ -158,7 +150,7 @@ footer a:hover {
 <header>
 
   <div class="header-left">
-    <img src="/image/dinesh.jpg">
+    <img src="images/dinesh.jpg">
   </div>
 
   <div class="header-center">
@@ -186,7 +178,6 @@ footer a:hover {
 
 <script>
 
-/* ARTICLES DATA */
 const articles = [
 
 {
@@ -195,13 +186,112 @@ const articles = [
   date: "21 February 2026",
   link: "/articles/article1.html"
 },
-
+  
 {
-  title: "My Janvani Platform Launch",
+  title: "आयुर्वेद और शीत ऋतु: वर्ष के सबसे ठंडे 14 दिनों में स्वास्थ्य रक्षा के नियम।",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article2.html"
+},
+{
+  title: "गर्भावस्था और ज्योतिष: 9 महीने 9 दिन तक गर्भ पर नौ ग्रहों का प्रभाव और सावधानी।",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article3.html"
+},
+{
+  title: "नरेगा से वीबी जी राम जी (VBGRJ): ग्रामीण रोजगार गारंटी योजनाओं का बदलता स्वरूप (मनरेगा का नया रूप)।",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article4.html"
+},{
+  title: "भक्ति और विवेक: गोस्वामी तुलसीदास, हनुमान जी और बिगड़े बैल का प्रसंग।",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article5.html"
+},{
+  title: "चूने के औषधीय लाभ: 70 बीमारियों का इलाज और कैल्शियम का भंडार।",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article6.html"
+},{
+  title: "नारियल पानी का विज्ञान: अमृत जैसा गुण, उपयोग का सही तरीका और सावधानियां।",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article7.html"
+},{
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article8.html"
+},
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+}
+  
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  }
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  }
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  }
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+}
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+}
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  }
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  }
+  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
+  author: "Dinesh Tiwari",
+  date: "21 February 2026",
+  link: "/articles/article9.html"
+},
+  
+{
+  title: "​नरेगा से वीबी जी राम जी (VBGRJ): ग्रामीण रोजगार गारंटी योजनाओं का बदलता स्वरूप (मनरेगा का नया रूप)।",
   author: "Suraj Tiwari",
   date: "20 February 2026",
-  link: "articles/article2.html"
+  link: "articles/article4.html"
 }
+  
 
 ];
 
