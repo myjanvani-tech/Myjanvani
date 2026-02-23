@@ -28,18 +28,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   background: white;
   padding: 12px 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* Left profile */
 .header-left img {
   width: 42px;
   height: 42px;
@@ -47,13 +43,11 @@ header {
   object-fit: cover;
 }
 
-/* Center Title */
 .header-center {
   font-size: 22px;
   font-weight: bold;
 }
 
-/* Right Buttons */
 .header-right a {
   text-decoration: none;
   margin-left: 10px;
@@ -73,15 +67,15 @@ header {
 /* CONTAINER */
 .container {
   flex: 1;
-  max-width: 750px;
-  margin: 40px auto 120px auto; /* footer space */
+  max-width: 850px;
+  margin: 40px auto 120px auto;
   padding: 15px;
 }
 
 /* ARTICLE CARD */
 .article-item {
   background: white;
-  padding: 22px;
+  padding: 20px;
   border-radius: 14px;
   margin-bottom: 25px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
@@ -90,6 +84,25 @@ header {
 
 .article-item:hover {
   transform: translateY(-4px);
+}
+
+/* FLEX LAYOUT */
+.article-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-section {
+  flex: 1;
+}
+
+.image-section img {
+  width: 140px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* AUTHOR */
@@ -120,6 +133,20 @@ header {
   color: gray;
 }
 
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .article-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: 180px;
+    margin-top: 10px;
+  }
+}
+
 /* FOOTER */
 footer {
   position: fixed;
@@ -148,9 +175,8 @@ footer a:hover {
 <body>
 
 <header>
-
   <div class="header-left">
-    <img src="/image/dinesh.jpg">
+    <img src="/Image/dinesh.jpg">
   </div>
 
   <div class="header-center">
@@ -161,7 +187,6 @@ footer a:hover {
     <a href="index.html">All Article</a>
     <a href="pages/about.html">About</a>
   </div>
-
 </header>
 
 <div class="container">
@@ -184,117 +209,30 @@ const articles = [
   title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
   author: "Dinesh Tiwari",
   date: "21 February 2026",
-  link: "/articles/article1.html"
+  link: "/articles/article1.html",
+  image: "/Image/1.jpg"
 },
-  
 {
   title: "आयुर्वेद और शीत ऋतु: वर्ष के सबसे ठंडे 14 दिनों में स्वास्थ्य रक्षा के नियम।",
   author: "Dinesh Tiwari",
   date: "21 February 2026",
-  link: "/articles/article2.html"
+  link: "/articles/article2.html",
+  image: "/Image/2.jpg"
 },
 {
   title: "गर्भावस्था और ज्योतिष: 9 महीने 9 दिन तक गर्भ पर नौ ग्रहों का प्रभाव और सावधानी।",
   author: "Dinesh Tiwari",
   date: "21 February 2026",
-  link: "/articles/article3.html"
+  link: "/articles/article3.html",
+  image: "/Image/3.jpg"
 },
 {
-  title: "नरेगा से वीबी जी राम जी (VBGRJ): ग्रामीण रोजगार गारंटी योजनाओं का बदलता स्वरूप (मनरेगा का नया रूप)।",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article4.html"
-},{
-  title: "भक्ति और विवेक: गोस्वामी तुलसीदास, हनुमान जी और बिगड़े बैल का प्रसंग।",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article5.html"
-},{
-  title: "चूने के औषधीय लाभ: 70 बीमारियों का इलाज और कैल्शियम का भंडार।",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article6.html"
-},{
-  title: "नारियल पानी का विज्ञान: अमृत जैसा गुण, उपयोग का सही तरीका और सावधानियां।",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article7.html"
-},{
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article8.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-
-} ,
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  {
-  title: "क्या भारत में एक वर्ग विधि नियम कानून से ऊपर है..",
-  author: "Dinesh Tiwari",
-  date: "21 February 2026",
-  link: "/articles/article9.html"
-},
-  
-{
-  title: "​नरेगा से वीबी जी राम जी (VBGRJ): ग्रामीण रोजगार गारंटी योजनाओं का बदलता स्वरूप (मनरेगा का नया रूप)।",
+  title: "नरेगा से वीबी जी राम जी (VBGRJ): ग्रामीण रोजगार गारंटी योजनाओं का बदलता स्वरूप।",
   author: "Suraj Tiwari",
   date: "20 February 2026",
-  link: "articles/article4.html"
+  link: "/articles/article4.html",
+  image: "/Image/4.jpg"
 }
-  
 
 ];
 
@@ -305,19 +243,25 @@ articles.forEach(article => {
 output += `
 <div class="article-item">
 
-<div class="author">
-${article.author}
-</div>
+  <div class="article-content">
 
-<div class="article-title">
-<a href="${article.link}">
-${article.title}
-</a>
-</div>
+    <div class="text-section">
+      <div class="author">${article.author}</div>
 
-<div class="date">
-${article.date}
-</div>
+      <div class="article-title">
+        <a href="${article.link}">
+        ${article.title}
+        </a>
+      </div>
+
+      <div class="date">${article.date}</div>
+    </div>
+
+    <div class="image-section">
+      <img src="${article.image}" alt="article image">
+    </div>
+
+  </div>
 
 </div>
 `;
